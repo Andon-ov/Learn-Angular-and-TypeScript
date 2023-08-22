@@ -1,0 +1,28 @@
+<h1 class="title">Hello!</h1>
+
+<!-- Conditionally render 'app-name-input' component if 'isVisible' is true -->
+<app-name-input *ngIf="isVisible" [inputValue]="nameInputValue" (btnClick)="nameInputBtnHandler($event)" />
+<hr>
+
+<!-- Input field with a reference variable 'inputEl' -->
+<input type="text" #inputEl>
+<!-- Button that triggers 'logInputValue' method with input value -->
+<button (click)="logInputValue(inputEl.value)">Log Value</button>
+
+<hr>
+
+<!-- Conditionally display content if 'isVisible' is true -->
+<div *ngIf="isVisible">
+  IS VISIBLE
+</div>
+<!-- Button to toggle the visibility -->
+<button (click)="toggleHandler()">Toggle</button>
+<hr>
+
+<!-- Loop through the 'users' array and display user information -->
+<ul *ngFor="let user of users; let i = index">
+  <h3>Our Users</h3>
+  <li>{{ i + 1 }}</li>
+  <li>Name: {{ user.name }}</li>
+  <li>Age: {{ user.age }}</li>
+</ul>

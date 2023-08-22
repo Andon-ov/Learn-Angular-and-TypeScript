@@ -1,0 +1,10 @@
+<!-- Display the value of the 'title' variable -->
+<p>{{ title }}!</p>
+
+<!-- Input field with two-way binding using 'inputValue' -->
+<input type="text" [value]="inputValue" (keyup)="inputKeyupHandler($event)">
+<!-- Display the value of the 'inputValue' variable -->
+{{ inputValue }}
+
+<!-- Button that triggers the 'btnClickHandler' method -->
+<button (click)="btnClickHandler($event)">Click Me!</button>
