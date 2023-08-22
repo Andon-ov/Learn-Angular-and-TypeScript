@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { data } from './data/seed';
-import { Article } from './models/article.model';
 
 @Component({
   selector: 'app-root',

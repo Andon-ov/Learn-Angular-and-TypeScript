@@ -7,8 +7,9 @@ import { Article } from '../models/article.model';
   styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent {
-  @Input() articles!: Article[];
   private symbols: number = 250;
+  @Input() article!: Article;
+  @Input() articleDesc!: string;
   descToShow: string;
   articleDescLen: number;
   showReadMoreBtn: boolean = true;
@@ -21,11 +22,11 @@ export class ArticleComponent {
     this.descToShow = '';
   }
 
-  readMore(description: string) {
+  readMore() {
     this.articleDescLen += this.symbols;
-    this.descToShow = description.substring(0, this.articleDescLen);
+    this.descToShow = this.articleDesc.substring(0, this.articleDescLen);
 
-    if (this.articleDescLen >= description.length) {
+    if (this.articleDescLen >= this.articleDesc.length) {
       this.showReadMoreBtn = false;
       this.showHideBtn = true;
     }
