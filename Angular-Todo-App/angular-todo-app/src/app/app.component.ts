@@ -15,5 +15,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.todos.getTodo().then((t) => (this.todo = t));
+    fetch('http://localhost:8000/api/todos/')
+      .then((data) => data.json())
+      .then((data) => console.log(data));
   }
 }

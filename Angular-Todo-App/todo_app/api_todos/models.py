@@ -1,7 +1,7 @@
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.db import models
 
-UserModel = get_user_model()
+# UserModel = get_user_model()
 
 
 class Todo(models.Model):
@@ -24,22 +24,22 @@ class Todo(models.Model):
         blank=False,
     )
 
-    category = models.ForeignKey(
-        to='Category',
-        on_delete=models.RESTRICT,
-    )
-    user = models.ForeignKey(
-        UserModel,
-        on_delete=models.RESTRICT,
-    )
+    # category = models.ForeignKey(
+    #     to='Category',
+    #     on_delete=models.RESTRICT,
+    # )
+    # user = models.ForeignKey(
+    #     UserModel,
+    #     on_delete=models.RESTRICT,
+    # )
 
 
-class Category(models.Model):
-    MAX_NAME_LEN = 15
+# class Category(models.Model):
+#     MAX_NAME_LEN = 15
 
-    name = models.CharField(
-        max_length=MAX_NAME_LEN,
-        null=False,
-        blank=False,
-        unique=True,
-    )
+#     name = models.CharField(
+#         max_length=MAX_NAME_LEN,
+#         null=False,
+#         blank=False,
+#         unique=True,
+#     )

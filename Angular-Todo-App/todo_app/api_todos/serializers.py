@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from todo_app.api_todos.models import Todo, Category
+from todo_app.api_todos.models import Todo
 
 
 class TodoForListSerializer(serializers.ModelSerializer):
@@ -12,7 +12,9 @@ class TodoForListSerializer(serializers.ModelSerializer):
 class TodoForCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
-        fields = ('id', 'title', 'description', 'category')
+        # fields = ('id', 'title', 'description', 'category')
+        fields = ('id', 'title', 'description')
+
 
     def create(self, validated_data):
         validated_data['user'] = self.context['request'].user
@@ -25,7 +27,7 @@ class TodoForDetailsSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'description', 'is_done')
 
 
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ('id', 'name')
+# class CategorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Category
+#         fields = ('id', 'name')
