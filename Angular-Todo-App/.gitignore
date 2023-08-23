@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+local_settings.py
+
+# Logs and databases
+*.log
+# *.sqlite3
+*.db
+
+# Media files
+media/
+
+# Compiled Python modules
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Node.js / npm
+node_modules/
+
+# Compiled TypeScript
+*.js
+*.map
+
+# Compiled Angular output
+dist/
+
+# Compiled Vue.js output
+/dist/
+/tmp/
+
+# Mac OS system files
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Django secret key
+.secret_key
+
+# Django migrations
+*.py[m]
+*.log

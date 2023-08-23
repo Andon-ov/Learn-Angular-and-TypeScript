@@ -1,0 +1,12 @@
+<div class="todolist">
+    <h3>List of Works Todo:</h3>
+    <p class="error-info"></p>
+
+
+    <ul *ngFor="let item of todos">
+        <app-todo-item [todo]="item" />
+
+    </ul>
+
+
+</div>
