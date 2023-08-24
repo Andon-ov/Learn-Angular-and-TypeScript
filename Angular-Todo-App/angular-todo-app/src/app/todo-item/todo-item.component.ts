@@ -27,8 +27,12 @@ export class TodoItemComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params) => {
       const id: string | null = params.get('id');
       if (id !== null) {
-        // Fetch todo details based on the id from the route
-        this.todoService.getTodo(id).then((data: FullTodo) => {
+        // Fetch todo details with Promise based on the id from the route
+        // this.todoService.getTodo(id).then((data: FullTodo) => {
+        //   this.todo = data;
+
+        // Observable
+        this.todoService.getTodo$(id).subscribe((data) => {
           this.todo = data;
         });
       }

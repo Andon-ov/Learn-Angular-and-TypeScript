@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   constructor(private todos: TodoService) {}
 
   ngOnInit() {
-    this.todos.getTodos().then((t) => (this.todo = t));
+    // Promise
+    // this.todos.getTodos().then((t) => (this.todo = t));
+
+    // Observable
+    this.todos.getTodos$().subscribe((t) => (this.todo = t));
   }
 }
