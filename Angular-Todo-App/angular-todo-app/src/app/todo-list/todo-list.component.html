@@ -2,11 +2,11 @@
     <h3>List of Works Todo:</h3>
     <p class="error-info"></p>
 
-
     <ul *ngFor="let item of todos">
-        <app-todo-item [todo]="item" />
+
+        <a [routerLink]="['/details', item.id]" routerLinkActive="active">TODO: {{ item.title }}</a>
+        <router-outlet />
+
 
     </ul>
-
-
 </div>

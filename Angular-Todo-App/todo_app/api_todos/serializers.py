@@ -16,9 +16,9 @@ class TodoForCreateSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'description')
 
 
-    def create(self, validated_data):
-        validated_data['user'] = self.context['request'].user
-        return super().create(validated_data)
+    # def create(self, validated_data):
+    #     validated_data['user'] = self.context['request'].user
+    #     return super().create(validated_data)
 
 
 class TodoForDetailsSerializer(serializers.ModelSerializer):

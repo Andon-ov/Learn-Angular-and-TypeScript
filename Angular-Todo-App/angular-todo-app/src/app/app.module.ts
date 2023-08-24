@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { AddTodoHeaderComponent } from './add-todo-header/add-todo-header.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     TodoListComponent,
     TodoItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

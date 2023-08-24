@@ -1,7 +1,10 @@
-<li data-id='test1'>{{todo?.title}}
-    <div class="tools">
-        <button class="complete"><i class="fas fa-check"></i></button>
+<div class="todo-info" data-id='{{todo?.id}}'>TODO:
+    <div class="tools">{{todo?.title}}
+        <p>{{todo?.description}}</p>
+        <button class="complete">{{todo?.is_done}}<i class="fas fa-check"></i></button>
+
         <button class="edit">EDIT</button>
         <button class="delete"><i class="fas fa-times"></i></button>
     </div>
-</li>
+    <button (click)="redirectToHome()">X</button>
+    <div>

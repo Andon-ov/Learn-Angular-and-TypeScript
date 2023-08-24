@@ -39,9 +39,9 @@ class ListCreateTodoApiView(rest_generic_views.ListCreateAPIView):
 class DetailsTodoApiView(rest_generic_views.RetrieveUpdateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoForDetailsSerializer
-    permission_classes = (
-        permissions.IsAuthenticated,
-    )
+    # permission_classes = (
+    #     permissions.IsAuthenticated,
+    # )
 
     def get_object(self):
         todo = super().get_object()
