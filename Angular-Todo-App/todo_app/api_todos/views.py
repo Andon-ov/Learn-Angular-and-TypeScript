@@ -63,3 +63,8 @@ class DetailsTodoApiView(rest_generic_views.RetrieveUpdateAPIView):
 #         return self.queryset\
 #             .filter(todo__user_id=self.request.user.id)\
 #             .distinct()
+
+
+class DetailsTodoApiView(rest_generic_views.RetrieveDestroyAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoForDetailsSerializer
