@@ -1,0 +1,9 @@
+<app-nav />
+<div class="main">
+    <div *ngIf="!spinnerService.isHidden">
+
+        <app-spinner />
+    </div>
+    <router-outlet />
+
+</div>

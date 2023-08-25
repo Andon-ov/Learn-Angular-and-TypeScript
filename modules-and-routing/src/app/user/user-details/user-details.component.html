@@ -1,0 +1,51 @@
+<div class="user-details">
+    <h2>User Details</h2>
+    <div class="user-info">
+        <label>ID:</label>
+        <span>{{ user?.id }}</span>
+    </div>
+    <div class="user-info">
+        <label>Name:</label>
+        <span>{{ user?.name }}</span>
+    </div>
+    <div class="user-info">
+        <label>Username:</label>
+        <span>{{ user?.username }}</span>
+    </div>
+    <div class="user-info">
+        <label>Email:</label>
+        <span>{{ user?.email }}</span>
+    </div>
+    <h3>Address</h3>
+    <div class="address-info">
+        <div class="address-field">
+            <label>Street:</label>
+            <span>{{ user?.address?.street }}</span>
+        </div>
+        <div class="address-field">
+            <label>Suite:</label>
+            <span>{{ user?.address?.suite }}</span>
+        </div>
+        <div class="address-field">
+            <label>City:</label>
+            <span>{{ user?.address?.city }}</span>
+        </div>
+        <div class="address-field">
+            <label>Zipcode:</label>
+            <span>{{ user?.address?.zipcode }}</span>
+        </div>
+    </div>
+    <h3>Company</h3>
+    <div class="company-info">
+        <label>Name:</label>
+        <span>{{ user?.company?.name }}</span>
+    </div>
+    <div class="company-info">
+        <label>Catch Phrase:</label>
+        <span>{{ user?.company?.catchPhrase }}</span>
+    </div>
+    <div class="company-info">
+        <label>BS:</label>
+        <span>{{ user?.company?.bs }}</span>
+    </div>
+</div>

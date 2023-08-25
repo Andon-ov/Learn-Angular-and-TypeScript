@@ -1,0 +1,34 @@
+/* styles.css */
+.user-details {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-info,
+  .address-info,
+  .company-info {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .address-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .address-field label {
+    margin-right: 5px;
+  }
+  
+  h2,
+  h3 {
+    margin-bottom: 10px;
+  }
+  

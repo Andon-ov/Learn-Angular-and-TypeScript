@@ -1,0 +1,3 @@
+<ul *ngFor="let user of users">
+    <li class="clickable" [routerLink]="['/user','detail', user.id ]">{{user.name}}</li>
+</ul>

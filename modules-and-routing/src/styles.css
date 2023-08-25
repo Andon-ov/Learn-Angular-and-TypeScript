@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    background-color: rgb(145, 145, 145);
+    width: 100%;
+    margin-left:auto;
+}
+
+.main{
+    padding: 5% 20%;
+}
+
+.link{
+    all: unset;
+    border: 1px solid black;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+}
+.link:hover{
+background-color: rgba(255, 255, 255, 0.3);
+}
