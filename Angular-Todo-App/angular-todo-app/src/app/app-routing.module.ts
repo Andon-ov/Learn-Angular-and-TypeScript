@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodoItemComponent } from './todo-item/todo-item.component';
+import { TodoItemComponent } from './todo/todo-item/todo-item.component';
 
 const routes: Routes = [{ path: 'details/:id', component: TodoItemComponent }];
 

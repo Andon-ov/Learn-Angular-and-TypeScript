@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TodoService } from '../todo.service';
-import { FullTodo } from '../todo';
+import { TodoService } from './../todo.service';
+import { FullTodo } from './../todo';
 
 @Component({
   selector: 'app-todo-item',
@@ -27,10 +27,6 @@ export class TodoItemComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params) => {
       const id: string | null = params.get('id');
       if (id !== null) {
-        // Fetch todo details with Promise based on the id from the route
-        // this.todoService.getTodo(id).then((data: FullTodo) => {
-        //   this.todo = data;
-
         // Observable
         this.todoService.getTodo$(id).subscribe((data) => {
           this.todo = data;
@@ -46,12 +42,12 @@ export class TodoItemComponent implements OnInit {
       let id = this.todo?.id ?? '';
       // Convert `id` to `string` before passing it to the method.
       this.todoService.deleteTodo(id as string).subscribe();
-      console.log(id);
       // Redirect to the home page.
-      this.redirectToHome();
+      this.router.navigate(['/']);
     }
   }
 }
+
 // import { Component, OnInit } from '@angular/core';
 // import { ActivatedRoute, Router } from '@angular/router';
 // import { TodoService } from '../todo.service';
