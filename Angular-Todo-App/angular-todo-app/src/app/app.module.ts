@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoModule } from './todo/todo.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { TodoModule } from './todo/todo.module';
     HttpClientModule,
     BrowserAnimationsModule,
     TodoModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

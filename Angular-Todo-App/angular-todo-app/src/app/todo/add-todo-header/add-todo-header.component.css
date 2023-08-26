@@ -1,0 +1,40 @@
+.header {
+  border-radius: 5px 5px 0 0;
+  padding: 2% 20%;
+  background-image: linear-gradient(340deg, #045de9 0%, #09c6f9 100%);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.todo-input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--light-dark);
+  background-color: var(--light);
+}
+
+.error-info {
+  margin-top: 20px;
+  color: var(--dark-blue);
+}
+
+.btn-add {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 5px;
+  color: var(--deep-dark);
+  background-color: var(--light);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.btn-add:hover {
+  color: #fff;
+  background-color: var(--light-dark);
+}

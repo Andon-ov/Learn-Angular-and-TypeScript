@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { FullTodo, Todo } from './todo';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
   constructor(private httpClient: HttpClient) {}
-
+  private todosSubject = new BehaviorSubject<Todo[]>([]);
   private apiUrl = 'http://localhost:8000/api/todos/';
 
   // Promise -------------------------------------------------------------
@@ -41,6 +42,16 @@ export class TodoService {
   }
 
   deleteTodo(id: string): Observable<any> {
-    return this.httpClient.delete<FullTodo>(`${this.apiUrl}delete/${id}/`);
+    // TODO: I need to fix the deletion - when I delete it It doesn't delete immediately but I have to refresh  maybe i can use "signals"
+
+    return this.httpClient.delete<FullTodo>(`${this.apiUrl}delete/${id}/`).pipe(
+      tap(() => {
+        // Remove the deleted todo from the list
+        const updatedTodos = this.todosSubject.value.filter(
+          (todo) => todo.id !== Number(id)
+        );
+        this.todosSubject.next(updatedTodos);
+      })
+    );
   }
 }

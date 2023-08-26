@@ -3,7 +3,10 @@
     <p class="error-info"></p>
 
     <ul *ngFor="let item of todos">
-        <a [routerLink]="['/details', item.id]" routerLinkActive="active">TODO: {{ item.title }}</a>
+        <li>
+
+            <a [routerLink]="['/details', item.id]" routerLinkActive="active">TODO: {{ item.title }}</a>
+        </li>
     </ul>
     <router-outlet />
 </div>

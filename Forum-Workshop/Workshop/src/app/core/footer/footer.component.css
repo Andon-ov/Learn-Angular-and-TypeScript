@@ -1,0 +1,26 @@
+.forum-footer {
+  background: linear-gradient(
+    109.6deg,
+    rgb(5, 84, 94) 16%,
+    rgb(187, 187, 187) 91.1%
+  );
+
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.forum-footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+.forum-footer a:hover {
+  color: #f2f2f2;
+}
+
+.forum-footer .copyright {
+  margin-top: 10px;
+  font-size: 12px;
+}

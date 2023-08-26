@@ -1,0 +1,121 @@
+app-theme {
+  display: block;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.theme-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.theme-container {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.theme-name h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.theme-name a {
+  color: #333;
+  text-decoration: none;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.nick-name span {
+  font-weight: bold;
+}
+
+.subscribers span {
+  font-weight: bold;
+}
+
+/* -------------------------------- */
+
+/* theme list item */
+
+.theme-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.theme-container span {
+  font-weight: bold;
+}
+
+.theme-container h2,
+p {
+  padding: 0.3em 0 0.2em;
+  margin: 0;
+}
+
+.theme-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3em 0.5em;
+  border: 1px solid #999;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+.theme-title {
+  padding: 0;
+}
+
+.theme-name {
+  width: 100%;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+}
+
+.subscribers {
+  text-align: right;
+  flex-basis: 25%;
+}
+
+.subscribers button {
+  padding: 0.2rem 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.subscribe {
+  background-color: green;
+}
+
+.unsubscribe {
+  background-color: red;
+}
+
+time {
+  font-weight: bold;
+}
+
+main {
+  width: 30rem;
+}

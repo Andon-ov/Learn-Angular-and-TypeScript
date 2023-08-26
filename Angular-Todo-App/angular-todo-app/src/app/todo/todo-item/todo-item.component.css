@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+.todo-info {
+  text-align: center;
+}
+
+.tools {
+  margin-top: 10px;
+}
+
+.complete,
+.edit,
+.delete {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.5s ease;
+}
+
+.complete:hover,
+.edit:hover,
+.delete:hover {
+  background-color: rgb(179, 177, 228);
+  color: blue;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 5px;
+}
+.close {
+  /* border: 1px solid black; */
+  border-radius: 10%;
+  padding: 5px 15px;
+  background-color: red;
+  color: black;
+  font-weight: 900;
+  transition: background-color 0.5s ease; /* Добавете този ред */
+}
+.close-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tools {
+  margin: 20px 0;
+}
