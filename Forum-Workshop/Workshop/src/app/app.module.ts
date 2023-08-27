@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
-import { MainModule } from './main/main.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ThemeAndPostModule } from './theme-and-post/theme-and-post.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     UserModule,
     SharedModule,
-    MainModule,
+    ThemeAndPostModule,
     HttpClientModule,
   ],
   providers: [],
