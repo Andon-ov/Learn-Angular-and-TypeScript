@@ -6,10 +6,17 @@ import { SharedModule } from '../shared/shared.module';
 import { ThemeContentComponent } from './theme-content/theme-content.component';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeAndPostComponent } from './theme-and-post/theme-and-post.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [PostsComponent, ThemeComponent, ThemeContentComponent, NewThemeComponent, ThemeAndPostComponent],
-  imports: [CommonModule, SharedModule],
+  declarations: [
+    PostsComponent,
+    ThemeComponent,
+    ThemeContentComponent,
+    NewThemeComponent,
+    ThemeAndPostComponent,
+  ],
+  imports: [CommonModule, SharedModule, RouterModule],
   exports: [PostsComponent, ThemeComponent],
 })
 export class ThemeAndPostModule {}

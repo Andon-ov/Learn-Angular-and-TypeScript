@@ -15,6 +15,10 @@ export class ApiService {
     return this.http.get<Theme[]>('http://localhost:3000/api/themes');
   }
 
+  getTheme(prop: number): Observable<Theme> {
+    return this.http.get<Theme>(`http://localhost:3000/api/themes/${prop}`);
+  }
+
   getPosts(prop: number): Observable<Post[]> {
     return this.http.get<Post[]>(
       `http://localhost:3000/api/posts?limit=${prop}`

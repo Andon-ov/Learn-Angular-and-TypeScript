@@ -1,8 +1,10 @@
+import { Post } from './post';
+
 export interface Theme {
   _id: string;
   themeName: string;
   subscribers: string[];
-  posts: string[];
+  posts: any; //string[] | Post[];
   userId: {
     _id: string;
     themes: string[];
