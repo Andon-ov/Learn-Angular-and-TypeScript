@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types/user';
-import { first } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,17 +19,34 @@ export class UserService {
       this.user = undefined;
     }
   }
-  login(): void {
-    this.user = {
-      email: 'Ivan@yahoo.com',
-      firstName: 'Ivan',
-      password: 'mySecretPass',
-      phonNumber: '+359888987654',
-    };
-    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+  login(email: string, password: string): boolean {
+    if (
+      this.user &&
+      this.user.email === email &&
+      this.user.password === password
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
+
   logout(): void {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);
+  }
+  register(
+    username: string,
+    email: string,
+    phoneNumber: string,
+    password: string
+  ) {
+    this.user = {
+      username: username,
+      email: email,
+      phonNumber: phoneNumber,
+      password: password,
+    };
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
 }

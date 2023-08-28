@@ -9,20 +9,55 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
+  baseUrl = 'http://localhost:3000/api';
   constructor(private http: HttpClient) {}
 
   getThemes(): Observable<Theme[]> {
-    return this.http.get<Theme[]>('http://localhost:3000/api/themes');
+    return this.http.get<Theme[]>(`${this.baseUrl}/themes`);
   }
 
   getTheme(prop: number): Observable<Theme> {
-    return this.http.get<Theme>(`http://localhost:3000/api/themes/${prop}`);
+    return this.http.get<Theme>(`${this.baseUrl}/${prop}`);
+  }
+
+  createTheme(themeName: string, postText: string): Observable<any> {
+    const newTheme = {
+      themeName: themeName,
+      posts: postText,
+    };
+
+    return this.http.post(`${this.baseUrl}/themes`, newTheme);
+  }
+
+  login(username: string, password: string): Observable<any> {
+    const newTheme = {
+      username: username,
+      password: password,
+    };
+
+    return this.http.post(`${this.baseUrl}/login`, newTheme);
+  }
+
+  register(
+    username: string,
+    email: string,
+    password: string,
+    rePassword: string,
+    tel: string
+  ): Observable<any> {
+    const newTheme = {
+      username: username,
+      email: email,
+      password: password,
+      rePassword: rePassword,
+      tel: tel,
+    };
+
+    return this.http.post(`${this.baseUrl}/register`, newTheme);
   }
 
   getPosts(prop: number): Observable<Post[]> {
-    return this.http.get<Post[]>(
-      `http://localhost:3000/api/posts?limit=${prop}`
-    );
+    return this.http.get<Post[]>(`${this.baseUrl}/posts?limit=${prop}`);
   }
 }
 // export class ApiService {

@@ -1,5 +1,3 @@
-import { Post } from './post';
-
 export interface Theme {
   _id: string;
   themeName: string;

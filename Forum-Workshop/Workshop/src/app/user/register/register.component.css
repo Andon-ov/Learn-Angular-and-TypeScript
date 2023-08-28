@@ -1,32 +1,27 @@
 /*login register forms  */
 
-form.login,
 form.register {
   width: 40%;
   margin: 2em auto 0;
   text-align: center;
 }
 
-.login fieldset,
 .register fieldset {
   border-radius: 0.3em;
   padding: 0.8em;
   background-color: #ffffff;
 }
 
-.login h2,
 .register h2 {
   padding-top: 0;
   border-bottom: none;
 }
 
-.login p,
 .register p {
   padding-bottom: 0;
   padding-top: 1.5rem;
 }
 
-.login input,
 .register input {
   flex: 0 1 100%;
   border: 1px solid;
@@ -36,12 +31,10 @@ form.register {
   border-bottom-right-radius: 0.3em;
 }
 
-.login select,
 .register select {
   border-color: black;
 }
 
-.login button,
 .register button {
   background-color: #518f98;
   color: white;
@@ -53,7 +46,6 @@ form.register {
   outline: none;
 }
 
-.login i,
 .register i {
   border: 1px solid;
   border-right: none;
@@ -63,17 +55,14 @@ form.register {
   background-color: #e9ecef;
 }
 
-.login a,
 .register a {
   color: #518f98;
 }
 
-.login a:hover,
 .register a:hover {
   cursor: pointer;
 }
 
-.login button:hover,
 .register button:hover {
   cursor: pointer;
   color: #518f98;
@@ -85,7 +74,6 @@ form.register {
   padding-right: 0.8em;
 }
 
-.login .field,
 .register .field {
   display: flex;
   padding-bottom: 0;

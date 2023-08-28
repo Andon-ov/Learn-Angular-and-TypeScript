@@ -7,6 +7,7 @@ import { ThemeContentComponent } from './theme-content/theme-content.component';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeAndPostComponent } from './theme-and-post/theme-and-post.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { RouterModule } from '@angular/router';
     NewThemeComponent,
     ThemeAndPostComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, RouterModule, FormsModule],
   exports: [PostsComponent, ThemeComponent],
 })
 export class ThemeAndPostModule {}

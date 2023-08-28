@@ -14,8 +14,8 @@
 }
 
 .header-background {
-  background-color: #4ebced;
-  border: 1px solid #4ebced;
+  background-color: #518f98;
+  border: 1px solid #518f98;
   padding: 1.5em;
   padding-bottom: 0;
   margin-bottom: 1em;
@@ -69,6 +69,8 @@ button + button {
 }
 
 .new-theme-buttons button {
+  background-color: #518f98;
+
   padding: 0.4em 1.5em;
   border: 1px solid #333333;
   border-radius: 0.3em;
@@ -83,4 +85,11 @@ p.error {
 
 .input-error {
   border-left-color: red;
+}
+
+.new-theme-buttons button:hover {
+  cursor: pointer;
+  color: #518f98;
+  background-color: white;
+  outline: 1px solid #518f98;
 }

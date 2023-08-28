@@ -66,17 +66,17 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* .container{
-    display: flex;
-    gap:30px;
-    justify-content: center;
-    align-items: flex-end;
-} */
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-end;
+}
 
 .container {
   /* width: 90%; */
-  /* margin-top: 2rem; */
-  /* padding-bottom: 4.5em; */
+  margin-top: 2rem;
+  padding-bottom: 4.5em;
   display: flex;
   align-items: flex-start;
   justify-content: center;
