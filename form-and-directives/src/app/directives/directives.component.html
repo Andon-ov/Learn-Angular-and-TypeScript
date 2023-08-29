@@ -1,0 +1,30 @@
+<!-- Directive usage example -->
+<h1 appHighlightOnMove>Hello from Directives!</h1>
+
+<div class="container">
+    <!-- Structural directive usage (ngIf) -->
+    <div *ngIf="true">Structural Directives</div>
+
+    <br>
+    <!-- ng-template usage with ngIf directive -->
+    <ng-template [ngIf]="true">
+        <div>Structural Directives ng-template</div>
+    </ng-template>
+    <br>
+
+    <!-- Custom structural directive usage (Usage 1) -->
+    <div *appMyStructuralDirective="isShown">Custom Structural Directive (Usage 1)</div>
+
+    <!-- Custom structural directive usage (Usage 2) -->
+    <br>
+    <!-- Using ng-template with custom structural directive -->
+    <ng-template [appMyStructuralDirective]="isShown" let-value="value" let-val
+        myDirectiveRef="appMyStructuralDirective">
+        <div>Custom Structural Directive (Usage 2)</div>
+        <h4>value: {{value}}: {{val}}</h4>
+    </ng-template>
+    <br>
+
+    <!-- Button to toggle custom structural directives -->
+    <button class="toggle" (click)="toggle()">Toggle Custom Structural Directives</button>
+</div>
