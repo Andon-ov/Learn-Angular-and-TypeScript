@@ -1,5 +1,3 @@
-<!-- <div class="container"> -->
-
 <!-- to use second way to get form remove form name from event handler -->
 <form #registerForm="ngForm" class="register" action="" method="post" (ngSubmit)="registerFormHandler(
     registerForm
@@ -24,15 +22,17 @@
         <!-- email -->
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-            <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" email required ngModel
-                #emailInput="ngModel">
+            <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" [appEmail]="['bg','com']"
+                ngModel #emailInput="ngModel" required>
+            <!-- [e]="appEmailDomains" -->
+
         </p>
         <div *ngIf="emailInput.touched">
             <p *ngIf="emailInput.errors?.['required']" class="error">
                 Email is required!
             </p>
 
-            <p *ngIf="emailInput.errors?.['email']" class="error">
+            <p *ngIf="emailInput.errors?.['appEmailValidator']" class="error">
                 Email is not valid!
             </p>
         </div>
@@ -74,6 +74,7 @@
             <p *ngIf="passwordInput.value !== rePasswordInput.value" class="error">Repeat Password does not match
                 password!</p>
         </div>
+        {{registerForm?.errors | json}}
 
         <button>Create
             Account</button>
@@ -86,5 +87,5 @@
 
     </fieldset>
 </form>
-<!-- </div> -->
+
 {{registerForm.value|json}}

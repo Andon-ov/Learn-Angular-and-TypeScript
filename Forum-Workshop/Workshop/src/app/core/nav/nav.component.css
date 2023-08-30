@@ -1,129 +1,116 @@
-
 header {
-    background: linear-gradient(109.6deg, rgb(5, 84, 94) 16%, rgb(187, 187, 187) 91.1%);
+  background: linear-gradient(
+    109.6deg,
+    rgb(5, 84, 94) 16%,
+    rgb(187, 187, 187) 91.1%
+  );
 
-    color: white;
-    padding: 10px 0;
+  color: white;
+  padding: 10px 0;
 }
 
 .mini-navbar-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 10%
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 10%;
 }
 
 .logo-wrap {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .logo {
-    font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
 }
-
-
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: black;
+  color: black;
 }
-
-
-
-
 
 /* -------------------- */
 
-
-
-
-
-
-
-
-
-
 header ul {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    width: 75%;
-    margin: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin: auto;
 }
 
 header ul span {
-    color: white;
-    padding: 0.5em;
+  color: white;
+  padding: 0.5em;
 }
 
 .mini-navbar ul {
-    border: 1px solid white;
-    border-radius: 0.3em;
-    padding-left: 0;
-    width: 100%;
+  border: 1px solid white;
+  border-radius: 0.3em;
+  padding-left: 0;
+  width: 100%;
 }
 
 header li {
-    list-style: none;
-    margin: .35em;
-    padding: 0 .95em;
+  list-style: none;
+  margin: 0.35em;
+  padding: 0 0.95em;
 }
 
 header a {
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 nav {
-    border-top: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
 }
 
 .logo {
-    font-size: 1.3em;
-    color: white;
-    padding-bottom: 0;
+  font-size: 1rem;
+  color: white;
+  padding-bottom: 0;
 }
 
 .logo-wrap {
-    font-family: 'Parisienne', cursive;
-    letter-spacing: .5em;
-    margin: 0.5em 0;
+  font-family: "Parisienne", cursive;
+  letter-spacing: 0.5em;
+  margin: 0.5em 0;
 }
 
 .mini-navbar-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 75%;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  margin: auto;
 }
 
 /* mini-navbar */
 
 .mini-navbar ul {
-    background-color:#518f98;
-    border-radius: 5px;
+  background-color: #518f98;
+  border-radius: 5px;
 }
 
-.mini-navbar ul li+li {
-    border-left: 1px solid lightgrey;
-    padding-left: .5em;
+.mini-navbar ul li + li {
+  border-left: 1px solid lightgrey;
+  padding-left: 0.5em;
 }

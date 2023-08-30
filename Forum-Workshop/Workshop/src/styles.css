@@ -67,18 +67,8 @@ body {
 }
 
 .container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.container {
-  /* width: 90%; */
-  margin-top: 2rem;
-  padding-bottom: 4.5em;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem;
+  width: 60%;
+  min-height: 64vh;
+  margin: auto;
+  padding-bottom: 4.5em 10rem;
 }

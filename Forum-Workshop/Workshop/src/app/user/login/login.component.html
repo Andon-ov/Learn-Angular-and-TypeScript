@@ -1,52 +1,50 @@
-<div class="container">
-    <form #loginForm="ngForm" class="login" action="" method="post" (submit)="loginFormHandler(loginForm)">
+<form #loginForm="ngForm" class="login" action="" method="post" (submit)="loginFormHandler(loginForm)">
 
-        <fieldset>
-            <h2>Login Form</h2>
+    <fieldset>
+        <h2>Login Form</h2>
 
-            <p class="field field-icon">
-                <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input #inputEmail class="input-error" type="email" name="email" id="email"
-                    placeholder="john.doe@gmail.com" ngModel #emailInput="ngModel" email>
+        <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input #inputEmail class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com"
+                ngModel #emailInput="ngModel" email>
+        </p>
+
+        <div *ngIf="emailInput.touched">
+
+            <p *ngIf="emailInput.errors?.['required']" class="error">
+                Email is required!
+            </p>
+            <p *ngIf="emailInput.errors?.['email']" class="error">
+                Email is not valid!
             </p>
 
-            <div *ngIf="emailInput.touched">
+        </div>
 
-                <p *ngIf="emailInput.errors?.['required']" class="error">
-                    Email is required!
-                </p>
-                <p *ngIf="emailInput.errors?.['email']" class="error">
-                    Email is not valid!
-                </p>
+        <p class="field field-icon">
+            <label for="password"><span><i class="fas fa-lock"></i></span></label>
+            <input #inputPassword type="password" name="password" id="password" placeholder="******" ngModel
+                #passwordInput="ngModel" minlength="4">
+        </p>
 
-            </div>
+        <div *ngIf="passwordInput.touched">
 
-            <p class="field field-icon">
-                <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input #inputPassword type="password" name="password" id="password" placeholder="******" ngModel
-                    #passwordInput="ngModel" minlength="4">
+
+            <p *ngIf="passwordInput.errors?.['required']" class="error">
+                Password is required!
+            </p>
+            <p *ngIf="passwordInput.errors?.['minlength']" class="error">
+                Password must be at least 4 characters!
             </p>
 
-            <div *ngIf="passwordInput.touched">
+        </div>
 
+        <button>Login</button>
+        <!-- (click)="loginIn( $event, inputEmail.value, inputPassword.value)" -->
 
-                <p *ngIf="passwordInput.errors?.['required']" class="error">
-                    Password is required!
-                </p>
-                <p *ngIf="passwordInput.errors?.['minlength']" class="error">
-                    Password must be at least 4 characters!
-                </p>
+        <p class="text-center">
+            Have an account?
+            <a routerLink="/register">Register</a>
+        </p>
 
-            </div>
-
-            <button>Login</button>
-            <!-- (click)="loginIn( $event, inputEmail.value, inputPassword.value)" -->
-
-            <p class="text-center">
-                Have an account?
-                <a routerLink="/register">Register</a>
-            </p>
-
-        </fieldset>
-    </form>
-</div>
+    </fieldset>
+</form>

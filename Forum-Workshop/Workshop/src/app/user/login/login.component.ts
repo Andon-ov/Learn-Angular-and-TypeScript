@@ -20,20 +20,20 @@ export class LoginComponent {
     const value: { email: string; password: string } = form.value;
     console.log('Login form submitted with:', value);
 
-    // let response = this.userService.login(value.email, value.password);
-    // console.log('Login response:', response);
+    let response = this.userService.login(value.email, value.password);
+    console.log('Login response:', response);
 
     this.apiService.login(value.email, value.password);
-    // console.log('Login response:', response);
+    console.log('Login response:', response);
 
-    // if (response) {
-    //   console.log('Login successful');
-    //   this.router.navigate(['/home']);
-    // } else {
-    //   console.log('Login failed');
-    //   alert('Email or password don`t match');
-    //   form.reset();
-    // }
+    if (response) {
+      console.log('Login successful');
+      this.router.navigate(['/themes']);
+    } else {
+      console.log('Login failed');
+      alert('Email or password don`t match');
+      form.reset();
+    }
   }
 
   // loginIn(e: Event, email: string, password: string) {

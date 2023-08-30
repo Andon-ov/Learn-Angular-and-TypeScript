@@ -1,8 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { UserService } from '../user.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/types/user';
 import { ApiService } from 'src/app/theme-and-post/api.service';
 
 @Component({
@@ -40,18 +39,28 @@ export class RegisterComponent {
     }
     if (value.password !== value.rePassword) {
       alert('Password and repeat Password are not the same');
+
       form.controls['password'].setValue('');
       form.controls['rePassword'].setValue('');
+
       return;
     } else {
       this.router.navigate(['/login']);
-      this.apiService.register(
+      this.registerPromise(
         value.username,
         value.email,
         value.password,
         value.rePassword,
         value.phoneNumber
       );
+
+      // this.apiService.registerPromise(
+      //   value.username,
+      //   value.email,
+      //   value.password,
+      //   value.rePassword,
+      //   value.phoneNumber
+      // );
       this.userService.register(
         value.username,
         value.email,
@@ -59,7 +68,6 @@ export class RegisterComponent {
         value.password
       );
     }
-    console.log(form.value);
 
     form.reset();
   }
@@ -82,4 +90,31 @@ export class RegisterComponent {
   //     this.userService.register(username, email, phoneNumber, password);
   //   }
   // }
+
+  registerPromise = async (
+    username: string,
+    email: string,
+    password: string,
+    rePassword: string,
+    tel: string
+  ) => {
+    try {
+      return await fetch('http://localhost:3000/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+          rePassword,
+          tel,
+        }),
+      });
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };
 }
