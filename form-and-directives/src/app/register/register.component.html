@@ -1,14 +1,50 @@
 <div class="register-container">
     <h2>Register</h2>
-    <form class="register-form">
+    <p>Reactive Form</p>
+
+    <form [formGroup]="registerForm" class="register-form" (ngSubmit)="handleSubmit()">
+        <!-- UserName -->
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" formControlName="username">
+
+        <div *ngIf="registerForm.get('username')?.touched">
+            <div *ngIf="registerForm.get('username')?.errors?.['required']">Username is REQUIRED!</div>
+            <div *ngIf="registerForm.get('username')?.errors?.['minlength']">Min Length is a 5</div>
+
+        </div>
+
+        <!-- Email -->
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" formControlName="email">
+
+        <div *ngIf="registerForm.get('email')?.touched">
+            <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is REQUIRED!</div>
+            <div *ngIf="registerForm.get('email')?.errors?.['minlength']">Min Length is a 5</div>
+
+        </div>
+
+        <!-- Password -->
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
+        <input type="password" id="password" name="password" formControlName="password">
+
+        <div *ngIf="registerForm.get('password')?.touched">
+            <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is REQUIRED!</div>
+            <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Min Length is a 5</div>
+
+        </div>
+
+        <!-- rePassword -->
+        <label for="rePassword">Confirm Password:</label>
+        <input type="password" id="rePassword" name="rePassword" formControlName="rePassword">
+
+        <div *ngIf="registerForm.get('rePassword')?.touched">
+            <div *ngIf="registerForm.get('rePassword')?.errors?.['required']">RePassword is REQUIRED!</div>
+            <div *ngIf="registerForm.get('rePassword')?.errors?.['minlength']">Min Length is a 5</div>
+
+        </div>
+
+
+
         <button type="submit">Register</button>
     </form>
 </div>

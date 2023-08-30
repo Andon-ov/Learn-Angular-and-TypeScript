@@ -1,10 +1,39 @@
 <div class="login-container">
     <h2>Login</h2>
-    <form class="login-form">
+    <p>Template-Driven Form</p>
+    <!-- !second way to add login form -->
+    <!-- <form #loginForm="ngForm" (submit)="loginFormHandler()" class="login-form"> -->
+    <form #loginForm="ngForm" (submit)="loginFormHandler(loginForm)" class="login-form">
+
+
+        <!-- Username -->
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" #username="ngModel" required ngModel minlength="5">
+
+        <div *ngIf="username.touched">
+            <div *ngIf="username.errors?.['required']">
+                Username is Required!
+            </div>
+            <div *ngIf="username.errors?.['minlength']">Min length 5 char!</div>
+
+        </div>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" #email="ngModel" ngModel email required>
+
+        <div *ngIf="email.touched">
+            <div *ngIf="email.errors?.['required']">
+                Email is Required!
+            </div>
+            <div *ngIf="email.errors?.['email']">Invalid Email!</div>
+
+        </div>
+
+        <!-- Password -->
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" #password="ngModel" required ngModel>
         <button type="submit">Login</button>
     </form>
+    {{loginForm.value| json}}
 </div>

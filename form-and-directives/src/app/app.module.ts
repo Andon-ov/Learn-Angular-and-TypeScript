@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyStructuralDirectiveDirective } from './my-structural-directive.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { MyStructuralDirectiveDirective } from './my-structural-directive.direct
     MyRouterLinkDirective,
     MyStructuralDirectiveDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, CoreModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CoreModule,
+    FormsModule, // Template-driven Form
+    ReactiveFormsModule, //Reactive Forms
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
