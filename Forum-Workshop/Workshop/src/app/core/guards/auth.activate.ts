@@ -10,7 +10,7 @@ export class AuthActivate implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): boolean | UrlTree | Observable<boolean | UrlTree> {
     return this.userService.isLogged;
   }

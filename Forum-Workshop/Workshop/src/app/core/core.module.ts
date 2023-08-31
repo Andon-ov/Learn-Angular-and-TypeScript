@@ -8,18 +8,8 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    NavComponent,
-    HomeComponent,
-    PageNotFoundComponent,
-  ],
+  declarations: [FooterComponent, NavComponent, HomeComponent, PageNotFoundComponent],
   imports: [CommonModule, RouterModule, SharedModule],
-  exports: [
-    FooterComponent,
-    NavComponent,
-    HomeComponent,
-    PageNotFoundComponent,
-  ],
+  exports: [FooterComponent, NavComponent, HomeComponent, PageNotFoundComponent],
 })
 export class CoreModule {}

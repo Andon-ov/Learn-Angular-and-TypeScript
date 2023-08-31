@@ -1,11 +1,5 @@
 import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
-import {
-  AbstractControl,
-  NG_VALIDATORS,
-  ValidationErrors,
-  Validator,
-  ValidatorFn,
-} from '@angular/forms';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { appEmailValidator } from './app-email-validator';
 
 @Directive({
@@ -32,8 +26,6 @@ export class AppEmailDirective implements Validator, OnChanges {
   }
 
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
-    console.log(this.validator(control));
-
     return this.validator(control);
   }
 }

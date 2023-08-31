@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/theme-and-post/api.service';
+import { appEmailDomains } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,19 @@ import { ApiService } from 'src/app/theme-and-post/api.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  appEmailDomains = appEmailDomains;
+
   constructor(
     private userService: UserService,
     private router: Router,
-    private apiService: ApiService
+    private apiService: ApiService,
   ) {}
 
   loginFormHandler(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+
     const value: { email: string; password: string } = form.value;
     console.log('Login form submitted with:', value);
 

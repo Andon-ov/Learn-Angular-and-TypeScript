@@ -93,3 +93,11 @@ p.error {
   background-color: white;
   outline: 1px solid #518f98;
 }
+
+.ng-dirty.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.public button:disabled {
+  background-color: gray;
+}

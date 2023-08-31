@@ -14,7 +14,7 @@ export class ThemeComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    public userService: UserService
+    public userService: UserService,
   ) {}
 
   ngOnInit(): void {

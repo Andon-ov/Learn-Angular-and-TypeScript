@@ -15,7 +15,7 @@ export class ThemeContentComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
   ) {}
 
   ngOnInit(): void {

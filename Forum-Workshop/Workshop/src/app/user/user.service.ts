@@ -20,11 +20,7 @@ export class UserService {
     }
   }
   login(email: string, password: string): boolean {
-    if (
-      this.user &&
-      this.user.email === email &&
-      this.user.password === password
-    ) {
+    if (this.user && this.user.email === email && this.user.password === password) {
       return true;
     } else {
       return false;
@@ -35,12 +31,7 @@ export class UserService {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);
   }
-  register(
-    username: string,
-    email: string,
-    phoneNumber: string,
-    password: string
-  ) {
+  register(username: string, email: string, phoneNumber: string, password: string) {
     this.user = {
       username: username,
       email: email,
@@ -48,5 +39,20 @@ export class UserService {
       password: password,
     };
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+  }
+  update(username: string, email: string, phoneNumber: string) {
+    const lsUser = localStorage.getItem(this.USER_KEY) || '';
+    this.user = JSON.parse(lsUser);
+    const password = this.user?.password;
+
+    if (password) {
+      this.user = {
+        username: username,
+        email: email,
+        phonNumber: phoneNumber,
+        password: password,
+      };
+      localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+    }
   }
 }

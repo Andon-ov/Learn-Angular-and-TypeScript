@@ -1,9 +1,5 @@
 .forum-footer {
-  background: linear-gradient(
-    109.6deg,
-    rgb(5, 84, 94) 16%,
-    rgb(187, 187, 187) 91.1%
-  );
+  background: linear-gradient(109.6deg, rgb(5, 84, 94) 16%, rgb(187, 187, 187) 91.1%);
 
   padding: 20px;
   text-align: center;

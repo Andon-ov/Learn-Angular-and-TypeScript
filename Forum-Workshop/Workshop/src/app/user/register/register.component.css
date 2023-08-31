@@ -90,3 +90,10 @@ p.error {
 .input-error {
   border-left-color: red;
 }
+.ng-dirty.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.register button:disabled {
+  background-color: gray;
+}

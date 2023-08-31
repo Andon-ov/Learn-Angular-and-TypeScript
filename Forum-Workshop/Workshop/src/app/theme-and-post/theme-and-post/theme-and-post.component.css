@@ -4,3 +4,9 @@
 
   justify-content: center;
 }
+app-theme {
+  min-width: 800px;
+}
+main {
+  width: 100%;
+}

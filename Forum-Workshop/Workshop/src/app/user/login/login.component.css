@@ -86,3 +86,11 @@ p.error {
 .input-error {
   border-left-color: red;
 }
+
+.ng-dirty.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.login button:disabled {
+  background-color: gray;
+}

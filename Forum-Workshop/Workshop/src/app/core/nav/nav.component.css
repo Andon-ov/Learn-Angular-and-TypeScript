@@ -1,9 +1,5 @@
 header {
-  background: linear-gradient(
-    109.6deg,
-    rgb(5, 84, 94) 16%,
-    rgb(187, 187, 187) 91.1%
-  );
+  background: linear-gradient(109.6deg, rgb(5, 84, 94) 16%, rgb(187, 187, 187) 91.1%);
 
   color: white;
   padding: 10px 0;
@@ -22,7 +18,7 @@ header {
 }
 
 .logo {
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 nav ul {
@@ -83,13 +79,13 @@ nav {
 }
 
 .logo {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: white;
   padding-bottom: 0;
 }
 
 .logo-wrap {
-  font-family: "Parisienne", cursive;
+  font-family: 'Parisienne', cursive;
   letter-spacing: 0.5em;
   margin: 0.5em 0;
 }

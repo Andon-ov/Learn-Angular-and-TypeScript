@@ -10,13 +10,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    PostsComponent,
-    ThemeComponent,
-    ThemeContentComponent,
-    NewThemeComponent,
-    ThemeAndPostComponent,
-  ],
+  declarations: [PostsComponent, ThemeComponent, ThemeContentComponent, NewThemeComponent, ThemeAndPostComponent],
   imports: [CommonModule, SharedModule, RouterModule, FormsModule],
   exports: [PostsComponent, ThemeComponent],
 })
