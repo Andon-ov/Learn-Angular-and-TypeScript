@@ -1,0 +1,101 @@
+<!-- Links section with a link to the Angular Pipes List -->
+<div class="links">
+  <a href="https://angular.io/api?type=pipe" target="_blank"
+    >Angular Pipes List</a
+  >
+</div>
+
+<!-- Playground title -->
+<h1 class="playground-title">Playground</h1>
+
+<!-- Playground content -->
+<div class="playground">
+  <hr />
+  <ul>
+    <!-- DecimalPipe: Formats numbers with a fixed number of decimal places -->
+    <ng-container *ngFor="let number of numbers | slice : 0 : 1">
+      <li>
+        DecimalPipe: Formats numbers with a fixed number of decimal places =>
+        {{ number | number : "1.2-2" }}
+      </li>
+    </ng-container>
+
+    <!-- PercentPipe: Formats numbers as percentages -->
+    <ng-container *ngFor="let number of numbers | slice : 0 : 1">
+      <li>
+        PercentPipe: Formats numbers as percentages =>
+        {{ number | percent : "1.2-2" }}
+      </li>
+    </ng-container>
+
+    <!-- KeyValuePipe: Iterates over object properties and provides key-value pairs -->
+    <ng-container *ngFor="let number of numbers | slice : 0 : 1 | keyvalue">
+      <li>
+        KeyValuePipe: Iterates over object properties and provides key-value
+        pairs => Key: {{ number.key }}, Value: {{ number.value }}
+      </li>
+    </ng-container>
+
+    <!-- JsonPipe: Converts an object to a JSON string for debugging purposes -->
+    <li>
+      JsonPipe: Converts an object to a JSON string for debugging purposes =>
+      {{ numbers | json }}
+    </li>
+
+    <!-- Custom Pipe: Calculates the sum of a list using a custom pipe -->
+    <li>Custom Pipe => Sum of list: {{ numbers | reduce : sum : 0 }}</li>
+
+    <!-- AsyncPipe: Handles observable or promise data -->
+    <li>
+      AsyncPipe: Handles observable or promise data => Promise: {{ p | async }}
+    </li>
+
+    <!-- DatePipe: Formats dates in various formats -->
+    <li>
+      DatePipe: Formats dates. You can use it to display dates in various
+      formats => Clock: {{ time$ | async | date : "hh:mm:ss" }}
+    </li>
+    <li>Clock: {{ time$ | async | date : "medium" }}</li>
+
+    <!-- CurrencyPipe: Formats numbers as currency values -->
+    <li>
+      CurrencyPipe: Formats numbers as currency values =>
+      {{ euro | currency : "USD" : "symbol" : "1.2-2" }}
+    </li>
+  </ul>
+  <hr />
+</div>
+
+<!-- User list section with user cards -->
+<div class="user-list users-grid">
+  <!-- SlicePipe: Extracts a portion of an array for displaying user cards -->
+  <div class="user-card" *ngFor="let user of users | slice : 0 : 4">
+    SlicePipe: Extracts a portion of an array =>
+
+    <!-- User details -->
+    <h2 class="user-name">{{ user.name | uppercase }}</h2>
+    <p class="user-username">@{{ user.username }}</p>
+    <p class="user-email">{{ user.email }}</p>
+    <address class="user-address">
+      <p class="user-street">Street: {{ user.address.street }}</p>
+      <p class="user-suite">Suite: {{ user.address.suite }}</p>
+      <p class="user-city">City: {{ user.address.city }}</p>
+      <p class="user-zipcode">Zipcode: {{ user.address.zipcode }}</p>
+    </address>
+    <p class="user-phone">Phone: {{ user.phone }}</p>
+    <a class="user-website" [href]="user.website" target="_blank"
+      >Website: {{ user.website }}</a
+    >
+    <div class="user-company">
+      <p class="user-company-name">Company: {{ user.company.name }}</p>
+      <p class="user-catchphrase">
+        LowerCasePipe: Converts text to lowercase => Catch Phrase:
+        {{ user.company.catchPhrase | lowercase }}
+      </p>
+      <p class="user-bs">
+        UpperCasePipe: Converts text to uppercase => BS:
+        {{ user.company.bs | uppercase }}
+      </p>
+    </div>
+  </div>
+</div>
