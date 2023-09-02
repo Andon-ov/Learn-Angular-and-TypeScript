@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PipesComponent } from './pipes/pipes.component';
 import { InterceptorsComponent } from './interceptors/interceptors.component';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { ReducePipe } from './reduce.pipe';
+import { AppInterceptor, AppInterceptorProvider } from './app.Interceptor';
 
 @NgModule({
-  declarations: [AppComponent, PipesComponent, InterceptorsComponent, ReducePipe],
+  declarations: [
+    AppComponent,
+    PipesComponent,
+    InterceptorsComponent,
+    ReducePipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, CoreModule, HttpClientModule],
-  providers: [],
+  providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

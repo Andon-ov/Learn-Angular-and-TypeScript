@@ -1,1 +1,31 @@
-<p>interceptors works!</p>
+<!-- User list section with user cards -->
+<h1 class="title">Users From Interceptors</h1>
+
+<div class="user-list users-grid">
+  <!-- SlicePipe: Extracts a portion of an array for displaying user cards -->
+  <div class="user-card" *ngFor="let user of users | slice : 0 : 4">
+    <!-- User details -->
+    <h2 class="user-name">{{ user.name | uppercase }}</h2>
+    <p class="user-username">@{{ user.username }}</p>
+    <p class="user-email">{{ user.email }}</p>
+    <address class="user-address">
+      <p class="user-street">Street: {{ user.address.street }}</p>
+      <p class="user-suite">Suite: {{ user.address.suite }}</p>
+      <p class="user-city">City: {{ user.address.city }}</p>
+      <p class="user-zipcode">Zipcode: {{ user.address.zipcode }}</p>
+    </address>
+    <p class="user-phone">Phone: {{ user.phone }}</p>
+    <a class="user-website" [href]="user.website" target="_blank"
+      >Website: {{ user.website }}</a
+    >
+    <div class="user-company">
+      <p class="user-company-name">Company: {{ user.company.name }}</p>
+      <p class="user-catchphrase">
+        {{ user.company.catchPhrase | lowercase }}
+      </p>
+      <p class="user-bs">
+        {{ user.company.bs | uppercase }}
+      </p>
+    </div>
+  </div>
+</div>
