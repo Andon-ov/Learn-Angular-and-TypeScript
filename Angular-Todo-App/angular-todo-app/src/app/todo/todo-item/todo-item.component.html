@@ -1,27 +1,23 @@
 <div class="container">
-    <div class="card">
-        <div class="close-wrapper">
-
-            <h2>TODO:</h2>
-            <button class="close" (click)="redirectToHome()">X</button>
-        </div>
-        <div class="todo-info" data-id="{{ todo?.id }}">
-            <div class="tools">
-                <h2>Title: {{ todo?.title }}</h2>
-
-                <p>Description: {{ todo?.description }}</p>
-            </div>
-            <div class="buttons">
-                <button class="complete">
-                    {{ todo?.is_done ? "Make it!": "Is Done!" }}
-                </button>
-
-                <button class="edit">EDIT</button>
-                <button (click)="deleteTodoHandler(todo)" class="delete">
-                    DELETE
-                </button>
-            </div>
-
-
-        </div>
+  <div class="card">
+    <div class="close-wrapper">
+      <h2>TODO:</h2>
+      <button class="close" (click)="redirectToHome()">X</button>
     </div>
+    <div class="todo-info" data-id="{{ todo?.id }}">
+      <div class="tools">
+        <h2>Title: {{ todo?.title }}</h2>
+
+        <p>Description: {{ todo?.description }}</p>
+      </div>
+      <div class="buttons">
+        <button class="complete">
+          {{ todo?.is_done ? "Make it!" : "Is Done!" }}
+        </button>
+
+        <button class="edit">EDIT</button>
+        <button (click)="deleteTodoHandler(todo)" class="delete">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>

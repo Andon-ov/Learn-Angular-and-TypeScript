@@ -8,13 +8,21 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
-  todos!: Todo[];
+  todos: Todo[] = []; // Initialize as an empty array
   constructor(private todoService: TodoService) {}
-  ngOnInit() {
-    // Promise
-    // this.todos.getTodos().then((t) => (this.todo = t));
 
+  ngOnInit() {
     // Observable
-    this.todoService.getAllTodo$().subscribe((t) => (this.todos = t));
+    this.todoService.getAllTodo$().subscribe(
+      (todos: Todo[]) => {
+        // Assign the fetched todos to the component property
+        this.todos = todos;
+        console.log('Fetched todos:', todos);
+      },
+      (error) => {
+        // Handle errors here if needed
+        console.error('Error fetching todos:', error);
+      }
+    );
   }
 }

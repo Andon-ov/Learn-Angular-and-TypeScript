@@ -6,11 +6,13 @@ import { AddTodoHeaderComponent } from './add-todo-header/add-todo-header.compon
 
 import { RouterModule } from '@angular/router';
 import { TodoItemResolver } from './todo-item/todo-item.resolver';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TodoItemComponent, TodoListComponent, AddTodoHeaderComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: 'details/:id',

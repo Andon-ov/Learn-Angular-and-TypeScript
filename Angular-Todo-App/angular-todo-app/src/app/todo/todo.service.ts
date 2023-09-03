@@ -1,7 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { FullTodo, Todo } from './todo';
+import { Observable, BehaviorSubject, catchError, throwError } from 'rxjs';
+import { PostTodo, GetTodo, Todo } from './todo';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -11,6 +15,8 @@ export class TodoService {
   constructor(private httpClient: HttpClient) {}
   private todosSubject = new BehaviorSubject<Todo[]>([]);
   private apiUrl = 'http://localhost:8000/api/todos/';
+
+  todos$: Observable<Todo[]> = this.todosSubject.asObservable();
 
   // Promise -------------------------------------------------------------
   // async getTodos() {
@@ -27,31 +33,39 @@ export class TodoService {
 
   // Observable ------------------------------------------------------------
   getAllTodo$(): Observable<Todo[]> {
-    return this.httpClient.get<Todo[]>(this.apiUrl);
-  }
-
-  getTodo$(id: string): Observable<FullTodo> {
-    return this.httpClient.get<FullTodo>(`${this.apiUrl}${id}/`);
-  }
-
-  createTodo(newTodo: FullTodo): Observable<FullTodo> {
-    return this.httpClient.post<FullTodo>(this.apiUrl, newTodo);
-  }
-  updateTodo(id: string, updatedTodo: FullTodo): Observable<FullTodo> {
-    return this.httpClient.put<FullTodo>(`${this.apiUrl}${id}/`, updatedTodo);
-  }
-
-  deleteTodo(id: string): Observable<any> {
-    // TODO: I need to fix the deletion - when I delete it It doesn't delete immediately but I have to refresh  maybe i can use "signals"
-
-    return this.httpClient.delete<FullTodo>(`${this.apiUrl}delete/${id}/`).pipe(
-      tap(() => {
-        // Remove the deleted todo from the list
-        const updatedTodos = this.todosSubject.value.filter(
-          (todo) => todo.id !== Number(id)
-        );
-        this.todosSubject.next(updatedTodos);
+    return this.httpClient.get<Todo[]>(this.apiUrl).pipe(
+      catchError((error: HttpErrorResponse) => {
+        // Handle errors here, you can log the error or throw it to handle in the component.
+        console.error('Error while fetching todos:', error);
+        return throwError(error);
       })
+    );
+  }
+
+  getTodo$(id: string): Observable<GetTodo> {
+    return this.httpClient.get<GetTodo>(`${this.apiUrl}${id}/`);
+  }
+
+  deleteTodo(id: string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.apiUrl}delete/${id}/`).pipe(
+      tap(() => {
+        this.todosSubject.next(
+          this.todosSubject.value.filter((todo) => todo.id !== Number(id))
+        );
+      })
+    );
+  }
+
+  sendPostRequest(todo: PostTodo) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    this.httpClient.post(this.apiUrl, todo, { headers }).subscribe(
+      (response) => {
+        console.log('Successfully POST request', response);
+      },
+      (error) => {
+        console.error('Error POST request', error);
+      }
     );
   }
 }

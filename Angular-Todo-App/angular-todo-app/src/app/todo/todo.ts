@@ -10,9 +10,14 @@ export interface Todo {
   title: string;
 }
 
-export interface FullTodo {
+export interface GetTodo {
   id: number;
   title: string;
   description: string;
   is_done: boolean;
+}
+
+export interface PostTodo {
+  title: string;
+  description: string;
 }

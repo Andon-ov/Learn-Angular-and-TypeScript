@@ -1,8 +1,25 @@
 <div class="header">
-    <h1>ToDo List</h1>
-    <div class="wrapper">
-        <input type="text" class="todo-input" #todoInput placeholder="Write your todo list here...">
-        <button class="btn-add" (click)="addTodo(todoInput)">Add</button>
+  <h1>ToDo List</h1>
+  <form class="wrapper" #todoForm="ngForm" (submit)="todoFormHandler(todoForm)">
+    <input
+      type="text"
+      class="todo-input"
+      name="title"
+      placeholder="Write your todo list here..."
+      required
+      minlength="5"
+      ngModel
+    />
+    <textarea
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+      ngModel
+      required
+      minlength="10"
+    ></textarea>
 
-    </div>
+    <button>Add</button>
+  </form>
 </div>
