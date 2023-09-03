@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReducePipe } from './reduce.pipe';
 import { AppInterceptor, AppInterceptorProvider } from './app.Interceptor';
 import { LazyModule } from './lazy/lazy.module';
+import { SubjectComponent } from './subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LazyModule } from './lazy/lazy.module';
     PipesComponent,
     InterceptorsComponent,
     ReducePipe,
+    SubjectComponent,
   ],
   imports: [
     BrowserModule,
