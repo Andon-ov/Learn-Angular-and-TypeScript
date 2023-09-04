@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
     console.log(this.profileDetails);
     const { username, email, tel } = this.form.value;
     if (username && email && tel) {
-      this.userService.update(username, email, tel);
+      // this.userService.update(username, email, tel);
     }
     this.toggleEditMode();
   }

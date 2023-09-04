@@ -17,12 +17,18 @@ export class NavComponent {
     return this.userService.isLogged;
   }
 
-  get firstName(): string {
+  get username(): string {
     return this.userService.user?.username || '';
   }
 
   logout(): void {
-    this.userService.logout();
-    this.router.navigate(['/home']);
+    this.userService.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/login']);
+      },
+      error: () => {
+        this.router.navigate(['/login']);
+      },
+    });
   }
 }

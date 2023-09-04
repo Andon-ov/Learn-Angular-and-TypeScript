@@ -24,33 +24,10 @@ export class LoginComponent {
       return;
     }
 
-    const value: { email: string; password: string } = form.value;
-    console.log('Login form submitted with:', value);
+    const { email, password } = form.value;
 
-    let response = this.userService.login(value.email, value.password);
-    console.log('Login response:', response);
-
-    this.apiService.login(value.email, value.password);
-    console.log('Login response:', response);
-
-    if (response) {
-      console.log('Login successful');
-      this.router.navigate(['/themes']);
-    } else {
-      console.log('Login failed');
-      alert('Email or password don`t match');
-      form.reset();
-    }
+    this.userService.login(email, password).subscribe(() => {
+      this.router.navigate(['/']);
+    });
   }
-
-  // loginIn(e: Event, email: string, password: string) {
-  //   e.preventDefault();
-
-  //   let response = this.userService.login(email, password);
-  //   if (response) {
-  //     this.router.navigate(['/home']);
-  //   } else {
-  //     alert('Email or password don`t match');
-  //   }
-  // }
 }

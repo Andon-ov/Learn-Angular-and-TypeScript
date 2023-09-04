@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ThemeAndPostModule } from './theme-and-post/theme-and-post.module';
 import { FormsModule } from '@angular/forms';
+import { appInterceptorProvider } from './app.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     ThemeAndPostModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
