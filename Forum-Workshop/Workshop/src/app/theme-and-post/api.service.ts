@@ -35,7 +35,7 @@ export class ApiService {
       password: password,
     };
 
-    return this.http.post(`${this.baseUrl}/users/login`, newTheme);
+    return this.http.post(`${this.baseUrl}/users/auth/login`, newTheme);
   }
   register(username: string, email: string, password: string, rePassword: string, tel: string): Observable<any> {
     const newTheme = {
@@ -46,10 +46,10 @@ export class ApiService {
       tel: tel,
     };
 
-    return this.http.post(`${this.baseUrl}/users/register`, newTheme);
+    return this.http.post(`${this.baseUrl}/users/auth/register`, newTheme);
   }
   registerPromise(username: string, email: string, password: string, rePassword: string, tel: string) {
-    return fetch('http://localhost:3000/api/user/register', {
+    return fetch('http://localhost:3000/api/user/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

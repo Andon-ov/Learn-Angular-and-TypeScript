@@ -10,15 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ThemeAndPostModule } from './theme-and-post/theme-and-post.module';
 import { FormsModule } from '@angular/forms';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AuthenticateComponent],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     CoreModule,
-    UserModule,
     SharedModule,
     ThemeAndPostModule,
     HttpClientModule,

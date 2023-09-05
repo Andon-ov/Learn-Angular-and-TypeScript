@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   get user() {
+    console.log(this.userService.user);
+
     return this.userService.user;
   }
   toggleEditMode(): void {
@@ -46,7 +48,7 @@ export class ProfileComponent implements OnInit {
     console.log(this.profileDetails);
     const { username, email, tel } = this.form.value;
     if (username && email && tel) {
-      // this.userService.update(username, email, tel);
+      this.userService.updateProfile(username, email, tel);
     }
     this.toggleEditMode();
   }
@@ -55,7 +57,7 @@ export class ProfileComponent implements OnInit {
     if (this.user) {
       this.form.get('username')?.setValue(this.user?.username);
       this.form.get('email')?.setValue(this.user?.email);
-      this.form.get('tel')?.setValue(this.user?.phonNumber);
+      this.form.get('tel')?.setValue(this.user?.tel);
     }
   }
 }
