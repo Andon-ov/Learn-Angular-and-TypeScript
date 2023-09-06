@@ -3,13 +3,22 @@ import { Injectable, Provider } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ErrorService } from './core/error/error.service';
+import { catchError } from 'rxjs/operators';
 
 const { apiUrl } = environment;
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
+  public get router(): Router {
+    return this._router;
+  }
+  public set router(value: Router) {
+    this._router = value;
+  }
   constructor(
-    private router: Router, // private errorServie: ErrorService
+    private _router: Router,
+    private errorService: ErrorService,
   ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -20,19 +29,18 @@ export class AppInterceptor implements HttpInterceptor {
       });
     }
 
-    return next.handle(req);
-    // .pipe(
-    //   catchError((err) => {
-    //     if (err.status === 401) {
-    //       this.router.navigate(['/auth/auth/login']);
-    //     } else {
-    //       this.errorServie.setError(err);
-    //       this.router.navigate(['/error']);
-    //     }
+    return next.handle(req).pipe(
+      catchError((err) => {
+        if (err.status === 401) {
+          this.router.navigate(['/auth/login']);
+        } else {
+          this.errorService.setError(err);
+          this.router.navigate(['/error']);
+        }
 
-    //     return [err];
-    // })
-    // );
+        return [err];
+      }),
+    );
   }
 }
 

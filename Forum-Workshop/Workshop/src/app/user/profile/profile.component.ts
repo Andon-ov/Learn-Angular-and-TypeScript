@@ -18,7 +18,12 @@ interface Profile {
 export class ProfileComponent implements OnInit {
   isEditMode: boolean = false;
 
-  profileDetails: Profile | undefined;
+  profileDetails: Profile = {
+    username: '',
+    email: '',
+    tel: '',
+  };
+
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [appEmailValidator(appEmailDomains)]],
@@ -31,12 +36,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   get user() {
-    console.log(this.userService.user);
-
     return this.userService.user;
-  }
-  toggleEditMode(): void {
-    this.isEditMode = !this.isEditMode;
   }
 
   saveProfileHandler(): void {
@@ -45,19 +45,23 @@ export class ProfileComponent implements OnInit {
     }
 
     this.profileDetails = { ...this.form.value } as Profile;
-    console.log(this.profileDetails);
-    const { username, email, tel } = this.form.value;
-    if (username && email && tel) {
-      this.userService.updateProfile(username, email, tel);
-    }
-    this.toggleEditMode();
+    const { username, email, tel } = this.profileDetails;
+    this.userService.updateProfile(username!, email!, tel!).subscribe(() => {
+      this.toggleEditMode();
+    });
   }
 
   ngOnInit() {
-    if (this.user) {
-      this.form.get('username')?.setValue(this.user?.username);
-      this.form.get('email')?.setValue(this.user?.email);
-      this.form.get('tel')?.setValue(this.user?.tel);
-    }
+    const { username, email, tel } = this.userService.user!;
+    this.profileDetails = {
+      username,
+      email,
+      tel,
+    };
+
+    this.form.setValue({ username, email, tel });
+  }
+  toggleEditMode(): void {
+    this.isEditMode = !this.isEditMode;
   }
 }

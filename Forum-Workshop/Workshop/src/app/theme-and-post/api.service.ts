@@ -9,58 +9,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
-  baseUrl = 'http://localhost:3000/api';
+  baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
 
   getThemes(): Observable<Theme[]> {
     return this.http.get<Theme[]>(`${this.baseUrl}/themes`);
   }
 
-  getTheme(prop: number): Observable<Theme> {
-    return this.http.get<Theme>(`${this.baseUrl}/${prop}`);
+  getTheme(id: number): Observable<Theme> {
+    return this.http.get<Theme>(`${this.baseUrl}/themes/${id}`);
   }
 
   createTheme(themeName: string, postText: string): Observable<any> {
-    const newTheme = {
-      themeName: themeName,
-      posts: postText,
-    };
-
-    return this.http.post(`${this.baseUrl}/themes`, newTheme);
-  }
-
-  login(username: string, password: string): Observable<any> {
-    const newTheme = {
-      username: username,
-      password: password,
-    };
-
-    return this.http.post(`${this.baseUrl}/users/auth/login`, newTheme);
-  }
-  register(username: string, email: string, password: string, rePassword: string, tel: string): Observable<any> {
-    const newTheme = {
-      username: username,
-      email: email,
-      password: password,
-      rePassword: rePassword,
-      tel: tel,
-    };
-
-    return this.http.post(`${this.baseUrl}/users/auth/register`, newTheme);
-  }
-  registerPromise(username: string, email: string, password: string, rePassword: string, tel: string) {
-    return fetch('http://localhost:3000/api/user/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        rePassword,
-        tel,
-      }),
+    return this.http.post(`/api/themes`, {
+      themeName,
+      postText,
     });
   }
 

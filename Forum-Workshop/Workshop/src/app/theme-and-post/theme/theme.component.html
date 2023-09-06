@@ -8,13 +8,13 @@
     <div *ngIf="!isLoading" class="theme-container">
       <div class="theme-name-wrapper">
         <div class="theme-name">
-          <a [routerLink]="['theme', theme._id]" class="normal">
-            <h2>{{ theme.themeName }}</h2>
+          <a [routerLink]="[theme._id]" class="normal">
+            <h2>{{ theme.themeName | slice: 25 }}</h2>
           </a>
           <div class="columns">
             <div>
               <p>
-                Date: <time>{{ theme.created_at }}</time>
+                Date: <time>{{ theme.created_at | elapsedTime }}</time>
               </p>
               <div class="nick-name">
                 <p>

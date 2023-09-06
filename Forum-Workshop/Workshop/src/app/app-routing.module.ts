@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'themes', component: ThemeAndPostComponent },
-  { path: 'themes/theme/:id', component: ThemeContentComponent },
+  { path: 'themes/:id', component: ThemeContentComponent },
   { path: 'auth', loadChildren: () => import('./user/user.module').then((m) => m.UserModule) },
   { path: 'error', component: ErrorComponent },
   // { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
