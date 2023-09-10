@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NameInputComponent } from './name-input.component';
+import { FooterComponent } from './footer.component';
 
-describe('NameInputComponent', () => {
-  let component: NameInputComponent;
-  let fixture: ComponentFixture<NameInputComponent>;
+describe('FooterComponent', () => {
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NameInputComponent]
+      declarations: [FooterComponent]
     });
-    fixture = TestBed.createComponent(NameInputComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <!-- Display the value of the 'title' variable -->
+  <p>{{ title }}!</p>
+
+  <!-- Input field with two-way binding using 'inputValue' -->
+  <input type="text" [value]="inputValue" (keyup)="inputKeyupHandler($event)" />
+  <!-- Display the value of the 'inputValue' variable -->
+  {{ inputValue }}
+
+  <!-- Button that triggers the 'btnClickHandler' method -->
+  <button (click)="btnClickHandler($event)">Click Me!</button>
+
+  <h1 class="title">Hello!</h1>
+
+  <hr />
+
+  <!-- Input field with a reference variable 'inputEl' -->
+  <input type="text" #inputEl />
+  <!-- Button that triggers 'logInputValue' method with input value -->
+  <button (click)="logInputValue(inputEl.value)">Log Value</button>
+
+  <hr />
+
+  <!-- Conditionally display content if 'isVisible' is true -->
+  <div *ngIf="isVisible">IS VISIBLE</div>
+  <!-- Button to toggle the visibility -->
+  <button (click)="toggleHandler()">Toggle</button>
+  <hr />
+
+  <!-- Loop through the 'users' array and display user information -->
+  <h3>Our Users</h3>
+  <ul *ngFor="let user of users; let i = index">
+    <li>{{ i + 1 }}</li>
+    <li>Name: {{ user.name }}</li>
+    <li>Age: {{ user.age }}</li>
+  </ul>
+</div>

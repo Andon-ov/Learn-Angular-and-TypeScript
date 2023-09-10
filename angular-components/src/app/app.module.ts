@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NameInputComponent } from './name-input/name-input.component';
+import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
+import { ExampleOneComponent } from './example-one/example-one.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ExampleTwoComponent } from './example-two/example-two.component';
 
 @NgModule({
-  declarations: [AppComponent, NameInputComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, ExampleOneComponent, ExampleTwoComponent],
+  imports: [BrowserModule, RouterModule, CoreModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
