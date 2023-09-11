@@ -1,3 +1,17 @@
 .wrapper {
   margin: 5% 20%;
 }
+img {
+  width: 200px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.game {
+  display: flex;
+  flex-direction: column;
+}
+.price {
+  color: purple;
+}
