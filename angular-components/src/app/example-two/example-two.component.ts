@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Game {
+export interface Game {
   title: string;
   price: number;
   img: string;
@@ -12,6 +12,7 @@ interface Game {
 })
 export class ExampleTwoComponent {
   shouldTitleBePurple: boolean = false;
+  shouldShowGameItemComponent: boolean = false;
   inputValue = '';
 
   games: Game[] = [
@@ -32,13 +33,16 @@ export class ExampleTwoComponent {
     },
   ];
 
+  handleSearchChange(event: Event) {
+    this.inputValue = (event.target as HTMLInputElement).value;
+    console.log(this.inputValue);
+  }
   handleExpandContentClick(gamesContainer: HTMLElement): void {
     this.shouldTitleBePurple = !this.shouldTitleBePurple;
     console.log(gamesContainer.children);
   }
 
-  handleSearchChange(event: Event) {
-    this.inputValue = (event.target as HTMLInputElement).value;
-    console.log(this.inputValue);
+  handleGameItemClick() {
+    this.shouldShowGameItemComponent = !this.shouldShowGameItemComponent;
   }
 }

@@ -1,0 +1,12 @@
+<br />
+
+<h4 [style.font-size.px]="15" [class.price]="shouldTitleBePurple">
+  {{ game.title }}
+</h4>
+<br />
+
+<span><img [attr.src]="game.img" [alt]="game.title + '\'s image'" /></span>
+
+<span [style.color]="'red'" *ngIf="game.price > 50">
+  Price: {{ game.price }}
+</span>

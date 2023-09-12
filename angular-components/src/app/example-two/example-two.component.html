@@ -11,26 +11,9 @@
   <br />
   Input Value: {{ inputValue }}
 
-  <!-- A list of games displayed as a grid using Angular's *ngFor -->
   <ul class="grid" #gameContainer>
     <li class="game" *ngFor="let game of games">
-      <br />
-
-      <!-- The title of the game with dynamic font size and optional class 'price' -->
-      <h4 [style.font-size.px]="15" [class.price]="shouldTitleBePurple">
-        {{ game.title }}
-      </h4>
-      <br />
-
-      <!-- Display the game's image -->
-      <span
-        ><img [attr.src]="game.img" [alt]="game.title + '\'s image'"
-      /></span>
-
-      <!-- Display the price of the game in red if it's greater than 50 -->
-      <span [style.color]="'red'" *ngIf="game.price > 50">
-        Price: {{ game.price }}
-      </span>
+      <app-game-item *ngIf="shouldShowGameItemComponent" [game]="game" />
     </li>
   </ul>
   <br />
@@ -40,5 +23,13 @@
   <!-- Button to toggle the title text color -->
   <button (click)="handleExpandContentClick(gameContainer)">
     {{ shouldTitleBePurple ? "Make Title Black" : "Make Title Purple" }}
+  </button>
+  <br />
+  <button (click)="handleGameItemClick()">
+    {{
+      shouldShowGameItemComponent
+        ? "Destroy Game Item Component"
+        : "Create Game Item Component"
+    }}
   </button>
 </div>

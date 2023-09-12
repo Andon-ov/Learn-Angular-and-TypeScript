@@ -1,0 +1,10 @@
+img {
+  width: 200px;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+}
+.price {
+  color: purple;
+}
