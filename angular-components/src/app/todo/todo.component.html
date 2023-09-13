@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <button (click)="makeAllTodoCompleted()">Make All Todo Completed</button>
+  <hr />
+
+  <br />
+  <div *ngFor="let todo of todos">
+    <app-todo-item
+      [todo]="todo"
+      (completeStateChange)="handleStateChange(todo)"
+    />
+  </div>
+</div>

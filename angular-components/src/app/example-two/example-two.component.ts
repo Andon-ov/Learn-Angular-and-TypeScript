@@ -12,7 +12,7 @@ export interface Game {
 })
 export class ExampleTwoComponent {
   shouldTitleBePurple: boolean = false;
-  shouldShowGameItemComponent: boolean = false;
+  shouldShowGameItemComponent: boolean = true;
   inputValue = '';
 
   games: Game[] = [

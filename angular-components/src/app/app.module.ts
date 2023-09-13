@@ -8,9 +8,11 @@ import { ExampleOneComponent } from './example-one/example-one.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ExampleTwoComponent } from './example-two/example-two.component';
 import { GameItemComponent } from './game-item/game-item.component';
+import { TodoComponent } from './todo/todo.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 @NgModule({
-  declarations: [AppComponent, ExampleOneComponent, ExampleTwoComponent, GameItemComponent],
+  declarations: [AppComponent, ExampleOneComponent, ExampleTwoComponent, GameItemComponent, TodoComponent, TodoItemComponent],
   imports: [BrowserModule, RouterModule, CoreModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
