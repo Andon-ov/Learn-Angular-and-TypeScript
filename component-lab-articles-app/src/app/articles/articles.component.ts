@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from '../article.model';
-import { ArticleDataService } from '../data/data';
+import { ArticleData } from '../data';
+import { Article } from '../models/article.model';
 
 @Component({
   selector: 'app-articles',
@@ -8,11 +8,9 @@ import { ArticleDataService } from '../data/data';
   styleUrls: ['./articles.component.css'],
 })
 export class ArticlesComponent implements OnInit {
-  articles: Article[] = [];
+  articles!: Article[];
 
-  constructor() {}
-
-  ngOnInit() {
-    this.articles = new ArticleDataService().getData();
+  ngOnInit(): void {
+    this.articles = new ArticleData().getData();
   }
 }

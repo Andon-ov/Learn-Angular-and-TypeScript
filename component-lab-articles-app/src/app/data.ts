@@ -1,11 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Article } from '../article.model';
+import { Article } from './models/article.model';
 import { data } from './seed';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ArticleDataService {
+export class ArticleData {
   getData(): Article[] {
     let articles: Article[] = [];
 
